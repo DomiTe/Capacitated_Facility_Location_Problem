@@ -1,0 +1,29 @@
+[project]
+name = "facility-location"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Karl Jurek Blumenthal", email = "karl.blumenthal@student.htw-berlin.de" },
+]
+requires-python = ">=3.12"
+dependencies = [
+    "folium==0.12.*",
+    "matplotlib>=3.10.3",
+    "numpy>=2.3.1",
+    "osmnx>=2.0.4",
+    "problib",
+    "pyscipopt>=5.5.0",
+    "pytest>=8.3.5",
+    "scipy>=1.16.0",
+]
+
+[project.scripts]
+facility-location = "facility_location:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+problib = { path = "../../lib", editable = true }
